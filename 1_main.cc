@@ -1,5 +1,8 @@
+#include "sort_lib/sorting.hpp"
+
 #include "2_utilities.h"
-#include "3_sort.h"
+
+
 
 #define GREETINGS    "******************************************\n"         \
                      "* Здравствуйте!                          *\n"         \
@@ -15,7 +18,6 @@ int main(void)
 {
   InputCheck _input;
   Utilities _utils;
-  Sort _sort;
 
   std::vector<int> array_for_sort;
   std::cout << GREETINGS;
@@ -40,8 +42,7 @@ int main(void)
           std::cout << "Введите [" << (i + 1) << "] элемент массива: ";
           array_for_sort[i] = _input.get_int();
         }
-
-        _sort.selection_sort(array_for_sort);
+        sorting::selection_sort(array_for_sort);
         array_for_sort.clear();
         _utils.save_array(num_of_objects, array_for_sort);
 
@@ -74,7 +75,7 @@ int main(void)
           std::cout << array_for_sort[arr_element_index] << " ";
         std::cout << "\n";
 
-        _sort.selection_sort(array_for_sort);
+        sorting::selection_sort(array_for_sort);
         _utils.save_array(num_of_objects, array_for_sort);
         array_for_sort.clear();
 
